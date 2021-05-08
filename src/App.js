@@ -4,14 +4,14 @@ import Axios from 'axios';
 function App() {
    
   const City = async() => {
-    //  var dist = document.getElementById("district").value;
-    //  console.log(dist)
+     var dist = document.getElementById("mondal").value;
+     console.log(dist)
     var date = new Date();
     console.log(date.getDate() +"  "+date.getMonth())
     const response = await Axios.get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=588&date=06-05-2021&pincode=503122')
       console.log(response.data)
-      // var one = response.data.sessions[0];
-      // console.log(one)
+      var one = response.data.sessions[0];
+      console.log(one)
   }
     City();
      return (
@@ -21,7 +21,7 @@ function App() {
           <Input
             type="text"
             placeholder="Enter Mondal"
-            id="district"
+            id="mondal"
           >
           </Input>
           <br/>
